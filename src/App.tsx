@@ -1,6 +1,5 @@
-import './App.css'
 import { useRecoilValue, useSetRecoilState } from 'recoil'
-import { accountState } from './stores/Account'
+import { accountState } from './stores/Account/Account'
 import { useNavigate } from 'react-router-dom'
 
 function App() {
@@ -10,9 +9,17 @@ function App() {
 
   const logout = () => {
     setAccount({
-      userId: '',
-      username: '',
-      password: '',
+      user: {
+        userId: '',
+        username: '',
+        password: '',
+        created_at: '',
+        updated_at: '',
+      },
+      token: {
+        accessToken: '',
+        tokenType: '',
+      },
     })
     navigate('/login')
   }
@@ -21,8 +28,8 @@ function App() {
     <>
       <div>
         <h2>Account</h2>
-        <p>Username: {account.username}</p>
-        <p>Password: {account.password}</p>
+        <p>Username: {account?.user?.username}</p>
+        <p>Password: {account?.user?.password}</p>
       </div>
       <div>
         <h2>logout</h2>

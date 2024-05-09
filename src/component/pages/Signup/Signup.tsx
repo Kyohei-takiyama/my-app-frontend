@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 import { registerUser, RequestUser } from '../../api/Api'
 import { useRecoilValue, useSetRecoilState } from 'recoil'
-import { accountState } from '../../../stores/Account'
+import { accountState } from '../../../stores/Account/Account'
 
 interface Props {}
 

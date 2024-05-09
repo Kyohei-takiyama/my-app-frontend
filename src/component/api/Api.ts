@@ -1,3 +1,4 @@
+import { ResponseAccount } from '../../stores/Account/Type'
 import { ApiComponent } from '../Apicomponent'
 
 // User API
@@ -19,5 +20,5 @@ export const fetchUser = async () => {
 // Auth API
 const AUTH_API = import.meta.env.VITE_API_VERSION + 'auth'
 export const loginAccount = async (data: RequestUser) => {
-  return await ApiComponent('post', `${AUTH_API}/login`, data)
+  return await ApiComponent<ResponseAccount>('post', `${AUTH_API}/login`, data)
 }

@@ -33,6 +33,7 @@ const Signup: React.FC<Props> = () => {
       username: form.username,
       password: form.password,
     }
+
     const res = await registerUser(request)
     if (res) {
       setAccount({
